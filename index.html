@@ -182,7 +182,7 @@
   </div>
 
   <script>
-    const URL = "./my_model/";
+    const URL = "./";
     let model, webcam, labelContainer, maxPredictions, loopReq = null;
 
     const qs = (s)=>document.querySelector(s);
@@ -215,13 +215,13 @@
         for (let i = 0; i < maxPredictions; i++) {
           const row = document.createElement('div');
           row.className = 'pred';
-          row.innerHTML = \`
+          row.innerHTML = \'
             <div class="top">
               <div class="name" id="n\${i}">Class \${i+1}</div>
               <div class="val" id="v\${i}">0.00</div>
             </div>
             <div class="bar"><i id="b\${i}"></i></div>
-          \`;
+          \';
           labelContainer.appendChild(row);
         }
         setStatus('模型已載入', 'ok');
